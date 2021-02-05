@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta property="og:url" content="https://share.f99.com.vn/product.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hỗ trợ vận hành">
+<meta property="og:image" content="https://share.f99.com.vn/logo_green.png">
+<meta property="og:image:secure" content="https://share.f99.com.vn/logo_green.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta property="og:description" content="Hỗ trợ check sản phẩm,...">
+<title>Tools Check Sản Phẩm</title>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	var settings = {
+  "url": "https://f99apim.azure-api.net/sync/v2/api/Inventory/Inventory",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Ocp-Apim-Subscription-Key": "465615a2ff734987909ec9e44d750cbe",
+    "Content-Type": "application/json"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+	$("#result").html(response);
+  console.log(response);
+});
+});
+</script>
+
+<div class="container">
+  <p id="result">Nhập mã sản phẩm -</p>
+</div>
+
+</body></html>
