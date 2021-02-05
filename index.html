@@ -17,20 +17,29 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-	var settings = {
-  "url": "https://f99apim.azure-api.net/sync/v2/api/Inventory/Inventory",
-  "method": "GET",
-  "timeout": 0,
-  "headers": {
-    "Ocp-Apim-Subscription-Key": "465615a2ff734987909ec9e44d750cbe",
-    "Content-Type": "application/json"
-  },
-};
 
-$.ajax(settings).done(function (response) {
-	$("#result").html(JSON.stringify(response));
-  console.log(response);
-});
+
+	 var d = new Date();
+  var n = d.getUTCHours();
+  console.log("vao");
+  if (n >= 0 && n <= 13) {
+  	console.log("dzo day");
+	var settings = {
+	  "url": "https://f99apim.azure-api.net/sync/v2/api/Inventory/Inventory",
+	  "method": "GET",
+	  "timeout": 0,
+	  "headers": {
+	    "Ocp-Apim-Subscription-Key": "465615a2ff734987909ec9e44d750cbe",
+	    "Content-Type": "application/json"
+	  },
+	};
+
+	$.ajax(settings).done(function (response) {
+		$("#result").html("ok");
+	  console.log(response);
+	});
+  }
+  console.log("out");
 });
 </script>
 
